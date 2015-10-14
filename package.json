@@ -1,5 +1,5 @@
 {
-  "name": "d3boilerplate",
+  "name": "AdvancedAngular",
   "version": "0.0.0",
   "description": "d3 boilerplate hosted on an express server",
   "main": "server/app.js",

@@ -1,0 +1,17 @@
+.carousel-container {
+	float: right;
+	overflow: hidden;
+	border: 1px solid black;
+}
+
+.carousel-container .carousel {
+	width: 10000px;
+	transition: 0.7s ease all;
+}
+
+.carousel-container .carousel .carousel-panel{
+	height: 100%;
+    display:inline-block;
+    overflow:hidden;
+	vertical-align: top;
+}

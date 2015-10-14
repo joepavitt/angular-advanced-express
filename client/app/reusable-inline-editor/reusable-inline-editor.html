@@ -1,0 +1,4 @@
+<div style="width: 100%">
+	<div ng-click="toggleEditMode()" ng-show="!editMode" style="padding: 10px">{{ editingValue }}</div>
+	<input type="text" ng-model="editingValue" ng-blur="toggleEditMode()" reusable-focus-me="editMode" ng-show="editMode" style="padding: 10px; width: 100%;">
+</div>

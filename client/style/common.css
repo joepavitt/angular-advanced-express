@@ -1,7 +1,26 @@
-.red {
-    color:red;
+body {
+	background-color: #BDBDBD;
 }
 
-.blue {
-    color:blue;
+.navbar {
+	background-color: #E72C37;
+	color: white;
+	border-color: #AF1F28;
+	border-width: 0px 0px 1px 0px;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+
+.navbar .navbar-brand {
+	color: white;
+}
+
+.navbar .navbar-nav > li > a {
+	color: white;
+}
+
+.container.content{
+	padding-top: 70px;
+	background-color: #eee;
+	box-shadow: 0px 0px 40px #676767;
 }

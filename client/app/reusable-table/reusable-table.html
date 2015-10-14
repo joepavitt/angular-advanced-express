@@ -1,0 +1,16 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th ng-repeat="col in tableData.cols">
+				<reusable-inline-editor editing-value="col.text"></reusable-inline-editor>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="row in tableData.rows">
+			<td ng-repeat="col in tableData.cols" style="padding: 0px">
+				<reusable-inline-editor editing-value="row[col.key]" style="padding:5px"></reusable-inline-editor>
+			</td>
+		</tr>
+	</tbody>
+</table>

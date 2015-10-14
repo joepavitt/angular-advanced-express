@@ -1,0 +1,22 @@
+<div>
+	<h3>Directives - Types of Scope</h3>
+	<div>
+		<p>This <code>&lt;input&gt;</code> box is linked to the controller's <code>parentVariable</code> variable.</p>
+		<input ng-model="parentVariable" style="width: 100%; margin-bottom: 10px;">
+		<p>The three sections below are directives with the same content. They are constructed as children of the scope containing the <code>parentVariable</code>. They are all built with very similar HTML - an <code>&lt;input&gt;</code> field and a <code>&lt;p&gt;</code> node that displays <code>parentVariable</code> in a different form, depending on the directive's <code>scope</code> attribute</p>
+	</div>
+	<div class="row no-margin">
+		<div class="col-xs-4">
+			<directive-scope-false class="directive-container"></directive-scope-false>
+		</div>
+		<div class="col-xs-4">
+			<directive-scope-true class="directive-container"></directive-scope-true>
+		</div>
+		<div class="col-xs-4">
+			<directive-scope-controlled isolated-variable="parentVariable" class="directive-container"></directive-scope-controlled>
+		</div>
+	</div>
+	<div class="row no-margin small-margin--top">
+		<p>For a detailed description of how each of them work, use the 'left' and 'right' button to look through the slides (which are conveniently stored inside a re-usable carousel directive). They try to explain the 3 concepts with an analogy of a child going to a nightclub and the parent wanting to know all of the details of what is going on inside the club.</p>
+	</div>
+</div>

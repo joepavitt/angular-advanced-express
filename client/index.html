@@ -2,93 +2,52 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="style/common.css">
+	<base href="/">
+	<title>Angular Advanced Example</title>
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/bytes/bytes.filter.js"></script>
-    <script src="app/myDirective/myDirective.js"></script>
-    <script src="app/myDirective/myDirective.controller.js"></script>
-    <script src="app/myService/myService.service.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="style/common.css">
+	<link rel="stylesheet" href="app/directive-scope-examples/directive-scope-examples.css">
+	<link rel="stylesheet" href="app/reusable-carousel/reusable-carousel.css">
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/d3/d3.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/data/data.controller.js"></script>
+	<script src="app/data/data.cards.controller.js"></script>
+	<script src="app/directive-scope-examples/directive-scope-examples.directives.js"></script>
+	<script src="app/reusable-table/reusable-table.directive.js"></script>
+	<script src="app/reusable-carousel/reusable-carousel.directive.js"></script>
+	<script src="app/reusable-inline-editor/reusable-inline-editor.directive.js"></script>
+	<script src="app/reusable-focus-me/reusable-focus-me.directive.js"></script>
 </head>
 
-<body ng-app="App" ng-controller="AppCtrl" style="margin-bottom: 30px">
-    <div class="container">
-        <!-- ng-show example -->
-        <h2 class="red">ng-show example</h2>
-        <input type="radio" name="tabs" value="1" ng-model="showtab">Tab 1
-        <br>
-        <input type="radio" name="tabs" value="2" ng-model="showtab">Tab 2
-        <br>
-        <input type="radio" name="tabs" value="3" ng-model="showtab">Tab 3
-        <br>
-        <div ng-show="showtab==1">This is the content for Tab 1, showing by default, click a different radio button!</div>
-        <div ng-show="showtab==2">Welcome to Tab 2</div>
-        <div ng-show="showtab==3">Tab 3 at your service...</div>
+<body ng-app="advanced-angular-app">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Angular Advanced Example</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li ui-sref-active="active"><a ui-sref="tutorial">Tutorial</a></li>
+					<li ui-sref-active="active"><a ui-sref="directives">Directives</a></li>
+					<li ui-sref-active="active"><a ui-sref="data.table">Data Sheet Example</a></li>
+				</ul>
+			</div>
 
-        <!-- ng-class example -->
-        <h2>ng-class example</h2>
-        <select ng-model="showcolor">
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-        </select>
-        <div ng-class="{red : showcolor=='red', blue : showcolor=='blue'}">My content will change color if you select one from the dropdown above</div>
-
-
-        <!-- ng-model and filter example -->
-        <h2>ng-model and filter example</h2>
-        <label>Type in a number in the input, and the filter will automatically format it into a file size.</label>
-        <input ng-model="bytes" placeholder="Type a number here">
-        <p>{{ bytes | bytesfilter }} - That uses the custom filter I built</p>
-        <p>{{ bytes | number : 2 }} - This uses a pre-defined angular filter, others include "currency", "uppercase", "lowercase"</p>
-
-        <!-- ng-repeat and ng-click example -->
-        <h2>ng-repeat and ng-click example</h2>
-        <p>Type in a string or number in the input and the table will <i>filter</i> results containing the input, e.g. typing "a" filter's out John's entry.</p>
-        <input ng-model="searchStr">
-        <br><br>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="person in arrayOfPeople | orderBy : 'number' : true | filter : searchStr">
-                    <td>{{ person.name }}</td>
-                    <td>{{ person.number }}</td>
-                </tr>
-            </tbody>
-        </table>
-    <br>
-        <p>Click the button to randomise the numbers assigned to each person, the order should automatically change. <i>ng-click</i> is used such that it calls a function assigned to the controller's scope.</p>
-    <button ng-click="randomiseNumbers()">Randomise Numbers</button>
-
-
-        <!-- Directive Example -->
-        <h2>Directive Example</h2>
-        <my-directive></my-directive>
-
-        <!-- REST API -->
-        <h2>REST API (using $http) Example</h2>
-        <i style="margin-bottom: 20px">[Check the console (right click and press 'Inspect Element' to view console) for the responses]</i>
-        <p>Complete a simple GET Request by pressing this button:</p>
-        <button ng-click="getStuff()">GET stuff from API</button>
-        <p>Insert a name for a device, if you leave it blank and then "submit" you should see a '400 Bad Request' Error:</p>
-        <form ng-submit="postDevice(deviceName1)">
-            <input type="text" ng-model="deviceName1">
-            <input type="submit" value="Submit">
-        </form>
-        <p>Insert any name and submit. The ng-submit function is built to purposely assemble the wrong JSON. Expect a '400 Bad Request' Error:</p>
-        <form ng-submit="postDeviceBadRequest(deviceName2)">
-            <input type="text" ng-model="deviceName2">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+		</div>
+	</nav>
+	<div class="container content">
+		<div style="border-bottom: 1px solid #BFBFBF;">
+			<h1 class="page-header" style="margin-top: 0px; margin-bottom: 0px;">This is in index.html.</h1>
+			<p>As is this. Everything below this is in a nested view, controlled by the ui-router.</p>
+		</div>
+		<div ui-view=""></div>
+	</div>
 </body>
 
 

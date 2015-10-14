@@ -1,5 +1,7 @@
-var path = require('path');
-var errors = require('./components/errors');
+'use strict';
+
+/*var path = require('path');
+var errors = require('./components/errors');*/
 
 
 module.exports = function(app) {

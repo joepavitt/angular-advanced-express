@@ -1,0 +1,25 @@
+<div class="row" style="margin: 0px">
+	<div class="black-border small-padding row">
+		<input class="col-xs-12" ng-model="isolatedVariable">
+		<p style="margin-top:10px;" class="col-xs-12">{{ isolatedVariable }}</p>
+	</div>
+	<div class="black-border small-padding small-margin--top row">
+		<div reusable-carousel-container style="width:100%; border:none">
+			<div reusable-carousel active-panel="{{ activePanel }}">
+				<div reusable-carousel-panel class="img-container">
+					<img src="../../assets/images/directives-scope-controlled-1.png">
+					<p>An explanation about the first image</p>
+				</div>
+				<!--
+				-->
+				<div reusable-carousel-panel class="img-container">
+					<img src="../../assets/images/directives-scope-controlled-2.png">
+				</div>
+			</div>
+		</div>
+		<div>
+			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(-1)" ng-disabled="activePanel === 0">Left</button>
+			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(1)" ng-disabled="activePanel === 1">Right</button>
+		</div>
+	</div>
+</div>
