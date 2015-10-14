@@ -2,6 +2,10 @@ body {
 	background-color: #BDBDBD;
 }
 
+input {
+	padding: 5px 10px;
+}
+
 .navbar {
 	background-color: #E72C37;
 	color: white;
