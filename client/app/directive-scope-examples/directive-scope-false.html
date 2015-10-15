@@ -4,12 +4,23 @@
 		<p style="margin-top:10px;" class="col-xs-12">{{ parentVariable }}</p>
 	</div>
 	<div class="black-border small-padding small-margin--top row">
-		<div class="img-container">
-			<img src="../../assets/images/directives-scope-false.png">
+		<div reusable-carousel-container style="width:100%; border:none">
+			<div reusable-carousel active-panel="{{ activePanel }}">
+				<div reusable-carousel-panel class="img-container">
+					<img src="../../assets/images/directives-scope-false-1.png">
+					<p>The child is dropped off by the parent, inheriting the wisdon/knowledge that the parent has passed onto the child of how to behave in the club.</p>
+				</div>
+				<!--
+			-->
+				<div reusable-carousel-panel class="img-container">
+					<img src="../../assets/images/directives-scope-false-2.png">
+					<p>When the <code>scope</code> is <code>false</code>, the child tells everything to the parent about what goes on in the club. I like to think of it as <code>false</code> because let's face it, no child would do that for real.</p>
+				</div>
+			</div>
 		</div>
 		<div>
 			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(-1)" ng-disabled="activePanel === 0">Left</button>
-			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(1)" ng-disabled="activePanel === 0">Right</button>
+			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(1)" ng-disabled="activePanel === 1">Right</button>
 		</div>
 	</div>
 </div>

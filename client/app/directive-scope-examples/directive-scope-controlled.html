@@ -8,12 +8,13 @@
 			<div reusable-carousel active-panel="{{ activePanel }}">
 				<div reusable-carousel-panel class="img-container">
 					<img src="../../assets/images/directives-scope-controlled-1.png">
-					<p>An explanation about the first image</p>
+					<p>When <code>scope === controlled</code>, there a similar relationship as to when the <code>scope === false</code>, however...</p>
 				</div>
 				<!--
 				-->
 				<div reusable-carousel-panel class="img-container">
 					<img src="../../assets/images/directives-scope-controlled-2.png">
+					<p>...imagine a sober person in-between the parent and the child. They filter out the bits that the child won't want the parent to see. Within your directive, using this, you create a definition of the scope variables you want to be passed in and out of the child. Update it in the child, it'll update the parent.</p>
 				</div>
 			</div>
 		</div>

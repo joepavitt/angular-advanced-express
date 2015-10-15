@@ -8,18 +8,22 @@
 			<div reusable-carousel active-panel="{{ activePanel }}">
 				<div reusable-carousel-panel class="img-container">
 					<img src="../../assets/images/directives-scope-true-1.png">
-					<p>An explanation about the first image</p>
+					<p>As with the previous case, when the <code>scope === true</code>, the child is dropped off by the parent, inheriting the wisdon/knowledge that the parent has passed onto the child of how to behave in the club.</p>
 				</div>
 				<!--
-			-->
-				<div reusable-carousel-panel class="img-container">
+				--><div reusable-carousel-panel class="img-container">
+					<img src="../../assets/images/directives-scope-true-1.png">
+					<p>The parent can continue to pass on more wisdom, up until...</p>
+				</div><!--
+				--><div reusable-carousel-panel class="img-container">
 					<img src="../../assets/images/directives-scope-true-2.png">
+					<p>...the child decides to do their own thing. At this point, they no longer want the parent knowing what's going on, so they shut the doors of the club. To test this, change the parent input field, you'll see the child update. Then change the child, closing the door between the two. Updating the parent now causes no change with the child.</p>
 				</div>
 			</div>
 		</div>
 		<div>
 			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(-1)" ng-disabled="activePanel === 0">Left</button>
-			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(1)" ng-disabled="activePanel === 1">Right</button>
+			<button class="col-xs-6 btn btn-primary" ng-click="shiftActivePanel(1)" ng-disabled="activePanel === 2">Right</button>
 		</div>
 	</div>
 </div>

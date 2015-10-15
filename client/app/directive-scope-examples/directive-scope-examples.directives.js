@@ -34,7 +34,7 @@ angular.module('advanced-angular-app')
 				$scope.activePanel = 0;
 				$scope.shiftActivePanel = function(increment) {
 					var newPanel = $scope.activePanel + increment;
-					if (newPanel >= 0 && newPanel < 2) {
+					if (newPanel >= 0 && newPanel < 3) {
 						$scope.activePanel += increment;
 					}
 				};
