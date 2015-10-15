@@ -1,2 +1,12 @@
-<button ui-sref="data.cards({cards: data})">Show Cards</button>
-<reusable-table table-data="data"></reusable-table>
+<!--<button ui-sref="data.cards({cards: data})">Show Cards</button>-->
+<p>Below is an interactive example of 3 different directives, all blended into one.</p>
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2">
+		<reusable-table table-data="data"></reusable-table>
+	</div>
+</div>
+<ol class="col-xs-12">
+	<li><b>The table itself is the <code>reusable-table</code> HTML-only directive.</b> This has an isolated scope, <code>scope : {}</code>, taking an input of <code>table-data</code>. It converts that array of row and column information and draws a table. There is no <code>controller</code> or <code>link</code> functionality here.</li>
+	<li><b>The table cells use a HTML & functional <code>reusable-inline-editor</code> directive.</b> This also has an isolated scope, <code>scope : {}</code>, taking an input of <code>editing-value</code>. It binds that value to a <code>div</code> and <code>input</code> node to create the editable cell. It has some logic stored in a controller, toggling the visibility of the <code>div</code> and <code>input</code> nodes, and also injects HTML by replacing the <code>reusable-inline-editor</code> tags in the source HTML.</li>
+	<li><b>The inline editor then used a functionality-only directive called <code>reusable-focus-me</code>.</b> This directive uses the <code>link</code> option in the directive. It watches the <code>reusable-focus-me</code> attribute for change to a <code>true</code> value. When it detects it, it give focus to the <code>input</code> element and hightlights it's content.</li>
+</ol>

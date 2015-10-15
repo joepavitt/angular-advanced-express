@@ -11,16 +11,3 @@
 	width: 100%;
 	text-align: center;
 }
-
-.black-border {
-	border: 1px solid black;
-}
-.small-padding {
-	padding:5px;
-}
-.no-margin {
-	margin: 0px;
-}
-.small-margin--top {
-	margin-top: 5px;
-}
